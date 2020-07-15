@@ -26,5 +26,6 @@ urlpatterns = [
     url(r'^entrar/$', LoginView.as_view(template_name='login.html'), name='login'),
     url(r'^sair/$', LogoutView.as_view(next_page='index'), name='logout'),
     url(r'^catalogo/', include(('catalog.urls', 'catalog'), namespace='catalog')),
+    url(r'^conta/', include(('accounts.urls', 'accounts'), namespace='accounts')),
     url(r'^admin/', admin.site.urls),
 ]
