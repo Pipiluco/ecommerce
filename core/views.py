@@ -3,6 +3,7 @@ from django.views.generic import View, TemplateView, CreateView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
 from django.urls import reverse_lazy
+from django.contrib import messages
 
 from .forms import ContactForm
 
@@ -27,6 +28,8 @@ def contact(request):
     if form.is_valid():
         form.send_mail()
         success = True
+    else:
+        messages.error(request, 'Formulário inválido!')
 
     context = {'form': form, 'success': success}
 

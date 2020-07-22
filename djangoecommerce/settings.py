@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'core',
     'accounts',
     'catalog',
+    'checkout',
 ]
 
 MIDDLEWARE = [
@@ -156,6 +157,17 @@ LOGIN_REDIRECT_URL = 'index'
 LOGOUT_URL = 'logout'
 AUTH_USER_MODEL = 'accounts.User'
 AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend', 'accounts.backends.ModelBackend',)
+
+
+
+# Messages
+from django.contrib.messages import constants as messages_constants
+
+MESSAGE_TAGS = {messages_constants.DEBUG:'debug',
+                messages_constants.INFO:'info',
+                messages_constants.SUCCESS:'success',
+                messages_constants.WARNING:'warning',
+                messages_constants.ERROR:'danger'}
 
 
 try:
