@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url, include
+from django.urls import path
 from django.contrib.auth.views import LoginView, LogoutView
 
 from core import views
@@ -28,5 +29,8 @@ urlpatterns = [
     url(r'^catalogo/', include(('catalog.urls', 'catalog'), namespace='catalog')),
     url(r'^conta/', include(('accounts.urls', 'accounts'), namespace='accounts')),
     url(r'^compras/', include(('checkout.urls', 'checkout'), namespace='checkout')),
+
+    #path('compras/', include('checkout.urls')),
+
     url(r'^admin/', admin.site.urls),
 ]
