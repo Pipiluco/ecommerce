@@ -5,3 +5,4 @@ psycopg2
 model-mommy
 whitenoise
 django-widget-tweaks
+pagseguro==0.3.4

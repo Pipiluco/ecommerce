@@ -172,6 +172,11 @@ MESSAGE_TAGS = {messages_constants.DEBUG:'debug',
                 messages_constants.ERROR:'danger'}
 
 
+PAGSEGURO_TOKEN = '2E603A194EAD44FE98B7238FD06042F5'
+PAGSEGURO_EMAIL = 'lucasf.silva@live.com'
+PAGSEGURO_SANDBOX = True
+
+
 try:
     from .local_settings import *
 except ImportError:
